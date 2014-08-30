@@ -67,7 +67,7 @@ body {
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<jsp:include page="/menu-left.jsp"></jsp:include>
+			<jsp:include page="/menu-according.jsp"></jsp:include>
 			<div class="span10">
 				<div class="hero-unit">
 					<h1>Hello, world!</h1>
