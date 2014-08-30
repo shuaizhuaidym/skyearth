@@ -691,7 +691,7 @@ CREATE TABLE `tb_engineer` (
   `skill` varchar(255) NOT NULL,
   `tel` varchar(45) NOT NULL,
   PRIMARY KEY (`engineer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -700,6 +700,7 @@ CREATE TABLE `tb_engineer` (
 
 LOCK TABLES `tb_engineer` WRITE;
 /*!40000 ALTER TABLE `tb_engineer` DISABLE KEYS */;
+INSERT INTO `tb_engineer` VALUES (1,'Bill gates','2012-01-12 00:00:00','windows programing','135963245678'),(2,'jobs','2012-01-12 00:00:00','Mac programing','185963245678');
 /*!40000 ALTER TABLE `tb_engineer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -712,7 +713,18 @@ DROP TABLE IF EXISTS `tb_project`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_project` (
   `prj_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `prj_name` varchar(2048) NOT NULL,
+  `prj_name` varchar(2048) DEFAULT NULL,
+  `creator_id` int(10) unsigned DEFAULT NULL,
+  `creator_dept` varchar(64) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `client_desc` varchar(8192) DEFAULT NULL,
+  `contact_id` int(10) unsigned DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  `product_version` varchar(45) DEFAULT NULL,
+  `initial_solution` varchar(8192) DEFAULT NULL,
+  `real_cause` varchar(45) DEFAULT NULL,
+  `finish_date` datetime DEFAULT NULL,
   PRIMARY KEY (`prj_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -723,7 +735,7 @@ CREATE TABLE `tb_project` (
 
 LOCK TABLES `tb_project` WRITE;
 /*!40000 ALTER TABLE `tb_project` DISABLE KEYS */;
-INSERT INTO `tb_project` VALUES (1,'Plicement Department');
+INSERT INTO `tb_project` VALUES (1,'Plicement Department',1,'IPC','2014-08-09 00:00:00','net work in correct',2,'CREATED','identity gateway',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tb_project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -735,11 +747,12 @@ DROP TABLE IF EXISTS `tb_support`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_support` (
-  `prj_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `prj_id` int(10) unsigned NOT NULL,
+  `support_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `engineer_id` int(10) unsigned NOT NULL,
   `support_date` datetime NOT NULL,
   `result` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`prj_id`)
+  PRIMARY KEY (`support_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -785,4 +798,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-08-27 18:35:15
+-- Dump completed on 2014-08-30 11:57:05
