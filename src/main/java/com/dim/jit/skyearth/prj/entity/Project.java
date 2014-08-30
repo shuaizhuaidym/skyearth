@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,36 +21,36 @@ import com.dim.jit.skyearth.prj.commom.PrjStatus;
 @Entity
 @Table(name = "tb_project", catalog = "test")
 public class Project {
-	//项目标识
+	// 项目标识
 	private Integer prjId;
-	//项目名称
+	// 项目名称
 	private String prjName;
-	//创建人标识
+	// 创建人标识
 	private Engineer creator;
-	//创建人部门
+	// 创建人部门
 	private String creatorDept;
-	//创建时间
+	// 创建时间
 	private Date createDate;
-	//用户问题描述
+	// 用户问题描述
 	private String clientDesc;
 	// 联络人
-	private Integer contact;
+	private Engineer contact;
 	// 负责工程师
-	private Engineer engineer;
-	//当前状态
+	private List<Engineer> engineers = new ArrayList<Engineer>();
+	// 当前状态
 	private PrjStatus status;
-	//产品名称
+	// 产品名称
 	private String productName;
-	//产品版本
+	// 产品版本
 	private String produectVersion;
-	//初步方案
+	// 初步方案
 	private String initialSolution;
-	//真实原因
+	// 真实原因
 	private String realCause;
-	//结束时间
+	// 结束时间
 	private Date finishDate;
-	//支持记录
-	private List<SupportRecord>supportRecord=new ArrayList<SupportRecord>();
+	// 支持记录
+	private List<Support> supportRecord = new ArrayList<Support>();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -69,7 +72,7 @@ public class Project {
 		this.prjName = prjName;
 	}
 
-	@Column(name="creator_dept")
+	@Column(name = "creator_dept")
 	public String getCreatorDept() {
 		return creatorDept;
 	}
@@ -78,7 +81,7 @@ public class Project {
 		this.creatorDept = creatorDept;
 	}
 
-	@Column(name="create_date")
+	@Column(name = "create_date")
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -87,23 +90,16 @@ public class Project {
 		this.createDate = createDate;
 	}
 
-	
-	public Integer getContact() {
-		return contact;
-	}
-
-	public void setContact(Integer contact) {
-		this.contact = contact;
-	}
-
 	public PrjStatus getStatus() {
 		return status;
 	}
 
+	@Column(name = "status")
 	public void setStatus(PrjStatus status) {
 		this.status = status;
 	}
 
+	@Column(name = "client_desc")
 	public String getClientDesc() {
 		return clientDesc;
 	}
@@ -112,6 +108,7 @@ public class Project {
 		this.clientDesc = clientDesc;
 	}
 
+	@Column(name = "product_name")
 	public String getProductName() {
 		return productName;
 	}
@@ -120,6 +117,7 @@ public class Project {
 		this.productName = productName;
 	}
 
+	@Column(name = "product_version")
 	public String getProduectVersion() {
 		return produectVersion;
 	}
@@ -128,6 +126,7 @@ public class Project {
 		this.produectVersion = produectVersion;
 	}
 
+	@Column(name = "initial_solution")
 	public String getInitialSolution() {
 		return initialSolution;
 	}
@@ -136,6 +135,7 @@ public class Project {
 		this.initialSolution = initialSolution;
 	}
 
+	@Column(name = "real_cause")
 	public String getRealCause() {
 		return realCause;
 	}
@@ -144,6 +144,7 @@ public class Project {
 		this.realCause = realCause;
 	}
 
+	@Column(name = "finish_date")
 	public Date getFinishDate() {
 		return finishDate;
 	}
@@ -153,14 +154,17 @@ public class Project {
 	}
 
 	@OneToMany
-	public List<SupportRecord> getSupportRecord() {
+	@JoinColumn(name="prj_id")
+	public List<Support> getSupportRecord() {
 		return supportRecord;
 	}
 
-	public void setSupportRecord(List<SupportRecord> supportRecord) {
+	public void setSupportRecord(List<Support> supportRecord) {
 		this.supportRecord = supportRecord;
 	}
 
+	@ManyToOne
+	@JoinColumn(name = "creator_id")
 	public Engineer getCreator() {
 		return creator;
 	}
@@ -169,12 +173,25 @@ public class Project {
 		this.creator = creator;
 	}
 
-	public Engineer getEngineer() {
-		return engineer;
+	@ManyToOne
+	@JoinColumn(name = "contact_id")
+	public Engineer getContact() {
+		return contact;
 	}
 
-	public void setEngineer(Engineer engineer) {
-		this.engineer = engineer;
+	public void setContact(Engineer contact) {
+		this.contact = contact;
+	}
+
+	@JoinTable(name = "tb_support", 
+			joinColumns = { @JoinColumn(name = "project_id") }, 
+			inverseJoinColumns = { @JoinColumn(name = "engineer_id") })
+	public List<Engineer> getEngineers() {
+		return engineers;
+	}
+
+	public void setEngineers(List<Engineer> engineers) {
+		this.engineers = engineers;
 	}
 
 }
