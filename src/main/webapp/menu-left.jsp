@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <div class="span2">
+	<div class="tb-head nav-header">项目管理</div>
 	<div class="well sidebar-nav" style="height: 100%">
 		<ul class="nav nav-list">
-			<li class="nav-header">项目管理</li>
 			<li><a href="${ctx}/PrjListAction">项目查询</a></li>
 			<li><a href="#">Link</a></li>
 			<li><a href="#">Link</a></li>

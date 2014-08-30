@@ -9,10 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.dim.jit.skyearth.prj.entity.Project;
+import com.dim.jit.skyearth.prj.entity.Support;
 /**
  * Engineer
  * @author yanming_dai
@@ -33,9 +33,11 @@ public class Engineer {
 	@Column(name="employ_date")
 	private Date employDate;
 	// 擅长技术
+	@Column(name="skill")
 	private String skill;
 	//项目支持记录
-	private List<Project>supportRecords=new ArrayList<Project>();
+	@OneToMany(mappedBy="engineer")
+	private List<Support>supportRecords=new ArrayList<Support>();
 
 	public Integer getEngineerId() {
 		return engineerId;
@@ -69,12 +71,11 @@ public class Engineer {
 		this.skill = skill;
 	}
 
-	@ManyToMany(mappedBy="engineers")
-	public List<Project> getSupportRecords() {
+	public List<Support> getSupportRecords() {
 		return supportRecords;
 	}
 
-	public void setSupportRecords(List<Project> supportRecords) {
+	public void setSupportRecords(List<Support> supportRecords) {
 		this.supportRecords = supportRecords;
 	}
 }

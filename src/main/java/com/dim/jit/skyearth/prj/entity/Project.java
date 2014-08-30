@@ -6,11 +6,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -19,7 +19,7 @@ import com.dim.jit.skyearth.engineer.entity.Engineer;
 import com.dim.jit.skyearth.prj.commom.PrjStatus;
 
 @Entity
-@Table(name = "tb_project", catalog = "test")
+@Table(name = "tb_project", catalog = "skyearth")
 public class Project {
 	// 项目标识
 	private Integer prjId;
@@ -35,8 +35,8 @@ public class Project {
 	private String clientDesc;
 	// 联络人
 	private Engineer contact;
-	// 负责工程师
-	private List<Engineer> engineers = new ArrayList<Engineer>();
+	//项目支持记录
+	private List<Support> engineers = new ArrayList<Support>();
 	// 当前状态
 	private PrjStatus status;
 	// 产品名称
@@ -95,6 +95,7 @@ public class Project {
 	}
 
 	@Column(name = "status")
+	@Enumerated
 	public void setStatus(PrjStatus status) {
 		this.status = status;
 	}
@@ -183,14 +184,16 @@ public class Project {
 		this.contact = contact;
 	}
 
-	@JoinTable(name = "tb_support", 
-			joinColumns = { @JoinColumn(name = "project_id") }, 
-			inverseJoinColumns = { @JoinColumn(name = "engineer_id") })
-	public List<Engineer> getEngineers() {
+	@OneToMany
+	@JoinColumn(name="project")
+//	@JoinTable(name = "tb_support", 
+//			joinColumns = { @JoinColumn(name = "project_id") }, 
+//			inverseJoinColumns = { @JoinColumn(name = "engineer_id") })
+	public List<Support> getEngineers() {
 		return engineers;
 	}
 
-	public void setEngineers(List<Engineer> engineers) {
+	public void setEngineers(List<Support> engineers) {
 		this.engineers = engineers;
 	}
 

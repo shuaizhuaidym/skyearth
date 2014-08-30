@@ -86,7 +86,7 @@ body {
 						Logged in as <a href="#" class="navbar-link">Username</a>
 					</p>
 					<ul class="nav">
-						<li><a href="${ctx}/prj/new.action">新建项目</a></li>
+						<li><a href="${ctx}/prj/new.action">项目新建</a></li>
 						<li><a href="${ctx}/prj/list.action">项目查询</a></li>
 						<li><a href="${ctx}/prj/statistic.action">项目统计</a></li>
 						<li><a href="${ctx}/process/query.action">流程管理</a></li>

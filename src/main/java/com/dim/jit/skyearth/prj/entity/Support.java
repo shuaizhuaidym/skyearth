@@ -23,6 +23,7 @@ import com.dim.jit.skyearth.engineer.entity.Engineer;
 @Table(name="TB_SUPPORT")
 public class Support {
 	@Id
+	@Column(name="support_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer supportId;
 	//支持的项目
