@@ -2,66 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-<meta charset="utf-8">
-<title>乾元项目支持管理系统</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<link href="resource/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="resource/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="shortcut icon" href="resource/bootstrap/img/favicon.png">
-
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
-<!-- <script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script> -->
-<!-- Le styles -->
-<style type="text/css">
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-	height: 100%;
-}
-
-.sear-box {
-	background: #EEF1F8;
-}
-
-@media ( max-width : 980px) {
-	/* Enable use of floated navbar text */
-	.navbar-text.pull-right {
-		float: none;
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-}
-
-.lr {
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-.bread-nav {
-	margin-top: -15px;
-	margin-bottom: -15px;
-	position: static
-}
-
-.rds {
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-</style>
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
-
-<!-- Fav and touch icons -->
-
-</head>
 
 <body>
 

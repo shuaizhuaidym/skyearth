@@ -5,17 +5,14 @@
 	<div class="tb-head nav-header">项目管理</div>
 	<div class="well sidebar-nav" style="height: 100%">
 		<ul class="nav nav-list">
-			<li><a href="${ctx}/PrjListAction">项目查询</a></li>
-			<li><a href="#">Link</a></li>
-			<li><a href="#">Link</a></li>
+			<li style="display:none"><a href="${ctx}/PrjListAction">项目查询</a></li>
+
 			<li class="nav-header">流程管理</li>
-			<li><a href="${ctx}/process/deploy.action">发布流程</a></li>
-			<li><a href="#">Link</a></li>
-			<li><a href="#">Link</a></li>
+			<li style="display:none"><a href="${ctx}/process/deploy.action">发布流程</a></li>
+			
 			<li class="nav-header">统计分析</li>
 			<li><a href="<%=request.getContextPath()%>/PrjListAction">项目查询</a></li>
-			<li><a href="#">Link</a></li>
-			<li><a href="#">Link</a></li>
+			
 		</ul>
 	</div>
 	<!--/.well -->
