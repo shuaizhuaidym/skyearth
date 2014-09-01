@@ -6176,6 +6176,8 @@ a.badge:focus {
 .tb-head{
 	/* line-height:34px;
 	min-height:34px; */
+	border-left:1px #dddddd solid;
+	border-right:1px #dddddd solid;
 	background-color:#167AC6
 }
 .form-table tr td:nth-of-type(odd) {
