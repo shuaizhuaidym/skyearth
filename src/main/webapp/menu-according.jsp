@@ -1,27 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<body>
 	<style type="text/css">
-		.content .menu-one > li {width: 200px; height: auto; overflow: hidden; border-top: 1px solid #ddd;}
-		/* .content .menu-one > li.firstChild {border: 0;} */
-		.content .menu-one .header {height: 35px; background: #167ac6; line-height: 34px; text-indent: 15px; cursor: pointer;}
-		.content .menu-one .header:hover,
-		.content .menu-one .menuOne-current {background: #167ac6;}
-		.content .menu-one .header > span {display: block;}
-		.content .menu-one .header .txt {float: left; color: #fff;}
-		.content .menu-one .header .arrow {float: right; width: 35px; height: 35px; background: url(resource/menu/arrow-d.png) no-repeat center center;}
-		.content .menu-two {display: none; width: 220px; height: auto;}
-		.content .menu-two li {width:200px; height:35px; background: #f9f9f9; line-height: 34px; text-indent: 40px;list-style:none}
-		.content .menu-two li.firstChild {border: 0;}
-		.content .menu-two li a {display: block; color: #167ac6;}
-		.content .menu-two li:hover,
-		.content .menu-two li.menuTwo-current {background: #fff;}
+		.menu-one{margin-left:0}
+		.menu-content .menu-one > li {width: 200px; height: auto; overflow: hidden; border-top: 1px solid #ddd}
+		.menu-content .menu-one .header {height: 35px; background: #167ac6; line-height: 34px; text-indent: 15px; cursor: pointer;}
+		.menu-content .menu-one .header > span {display: block;}
+		.menu-content .menu-one .header .txt {float: left; color: #fff;}
+		.menu-content .menu-one .header .arrow {float: right; width: 35px; height: 35px; background: url(resource/menu/arrow-d.png) no-repeat center center;}
+		.menu-content .menu-two {display: none; width: 220px; height: auto;}
+		.menu-content .menu-two li {width:200px; height:35px; background: #f9f9f9; line-height: 34px; text-indent: 40px;list-style:none}
 
-		.content .menu-show .header {background: #167ac6;border-top:1px solid #ddd}
-		.content .menu-show .header .arrow {background-image: url(resource/menu/arrow-u.png);}
+		.menu-content .menu-two li a {display: block; color: #167ac6;}
+		.menu-content .menu-show .header .arrow {background-image: url(resource/menu/arrow-u.png);}
 	</style>
-	<div class="content">
+	
+	<div class="span2 menu-content">
 		<ul class="menu-one">
 			<li class="firstChild">
 				<div class="header">
@@ -86,6 +78,3 @@
 			</li>
 		</ul>
 	</div>
-
-</body>
-</html>
