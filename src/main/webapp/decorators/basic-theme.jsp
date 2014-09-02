@@ -8,7 +8,7 @@
 <link href="${ctx}/resource/bootstrap/img/favicon.png" rel="icon" type="image/x-icon" />
 <link href="${ctx}/resource/bootstrap/img/favicon.png" rel="shortcut icon" type="image/x-icon">
 
-<title>乾元项目支持管理系统</title>
+<title>JIT项目支持管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
@@ -80,7 +80,7 @@ body {
 				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="${ctx}/">乾元项目支持跟踪系统PTS</a>
+				<a class="brand" href="${ctx}/">JIT项目支持跟踪系统</a>
 				<div class="nav-collapse collapse">
 					<p class="navbar-text pull-right">
 						Logged in as <a href="#" class="navbar-link">Username</a>

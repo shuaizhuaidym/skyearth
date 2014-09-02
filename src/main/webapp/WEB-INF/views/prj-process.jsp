@@ -5,7 +5,7 @@
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<jsp:include page="/menu-left.jsp"></jsp:include>
+			<jsp:include page="/menu-bootstrap.jsp"></jsp:include>
 			<div class="span10">
 				<div class="tb-head"></div>
 				<div>

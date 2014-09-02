@@ -43,7 +43,7 @@ public class PrjQueryAction {
 		model.addAttribute("projects", prjs);
 
 		logger.info("Returning hello view");
-		return "prj-list";
+		return "prj-query";
 	}
 
 	/**
