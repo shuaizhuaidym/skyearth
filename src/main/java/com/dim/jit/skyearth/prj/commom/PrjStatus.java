@@ -6,7 +6,7 @@ package com.dim.jit.skyearth.prj.commom;
  *
  */
 public enum PrjStatus {
-	CREATED("ĞÂ½¨"), PROCESSING("´¦ÀíÖĞ"), SUSPEND("ÔİÍ£"), PROPOSED("¸ø³ö·½°¸"), FINISHED("½áÊø");
+	CREATED("æ–°å»º"), PROCESSING("å¤„ç†ä¸­"), SUSPEND("æš‚åœ"), PROPOSED("ç»™å‡ºæ–¹æ¡ˆ"), FINISHED("ç»“æŸ");
 
 	private String name;
 

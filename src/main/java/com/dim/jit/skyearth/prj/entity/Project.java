@@ -21,35 +21,35 @@ import com.dim.jit.skyearth.prj.commom.PrjStatus;
 @Entity
 @Table(name = "tb_project", catalog = "skyearth")
 public class Project {
-	// ÏîÄ¿±êÊ¶
+	// é¡¹ç›®æ ‡è¯†
 	private Integer prjId;
-	// ÏîÄ¿Ãû³Æ
+	// é¡¹ç›®åç§°
 	private String prjName;
-	// ´´½¨ÈË±êÊ¶
+	// åˆ›å»ºäººæ ‡è¯†
 	private Engineer creator;
-	// ´´½¨ÈË²¿ÃÅ
+	// åˆ›å»ºäººéƒ¨é—¨
 	private String creatorDept;
-	// ´´½¨Ê±¼ä
+	// åˆ›å»ºæ—¶é—´
 	private Date createDate;
-	// ÓÃ»§ÎÊÌâÃèÊö
+	// ç”¨æˆ·é—®é¢˜æè¿°
 	private String clientDesc;
-	// ÁªÂçÈË
+	// è”ç»œäºº
 	private Engineer contact;
-	//ÏîÄ¿Ö§³Ö¼ÇÂ¼
+	//é¡¹ç›®æ”¯æŒè®°å½•
 	private List<Support> engineers = new ArrayList<Support>();
-	// µ±Ç°×´Ì¬
+	// å½“å‰çŠ¶æ€
 	private PrjStatus status;
-	// ²úÆ·Ãû³Æ
+	// äº§å“åç§°
 	private String productName;
-	// ²úÆ·°æ±¾
+	// äº§å“ç‰ˆæœ¬
 	private String produectVersion;
-	// ³õ²½·½°¸
+	// åˆæ­¥æ–¹æ¡ˆ
 	private String initialSolution;
-	// ÕæÊµÔ­Òò
+	// çœŸå®åŸå› 
 	private String realCause;
-	// ½áÊøÊ±¼ä
+	// ç»“æŸæ—¶é—´
 	private Date finishDate;
-	// Ö§³Ö¼ÇÂ¼
+	// æ”¯æŒè®°å½•
 	private List<Support> supportRecord = new ArrayList<Support>();
 
 	@Id

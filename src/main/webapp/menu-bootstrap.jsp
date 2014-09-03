@@ -7,7 +7,7 @@
 			<div class="panel-heading">
 				<h4 class="panel-title nav-header">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="shadow-font">
-						<span class="glyphicon glyphicon-folder-close"></span>Content
+						<span class="glyphicon glyphicon-folder-close"></span>项目管理
 					</a>
 				</h4>
 			</div>
@@ -27,7 +27,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td><span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com/">Comments</a>
+								<td><span class="glyphicon glyphicon-comment text-success"></span>
+								<a href="http://www.jquery2dotnet.com/">Comments</a>
 									<span class="badge">42</span></td>
 							</tr>
 						</tbody>
@@ -38,7 +39,8 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title nav-header">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="shadow-font"><span class="glyphicon glyphicon-th"> </span>Modules</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="shadow-font">
+						<span class="glyphicon glyphicon-th"> </span>统计分析</a>
 				</h4>
 			</div>
 			<div id="collapseTwo" class="panel-collapse collapse">
@@ -66,7 +68,7 @@
 			<div class="panel-heading">
 				<h4 class="panel-title nav-header">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="shadow-font">
-						<span class="glyphicon glyphicon-folder-close"></span>Content
+						<span class="glyphicon glyphicon-folder-close"></span>流程管理
 					</a>
 				</h4>
 			</div>

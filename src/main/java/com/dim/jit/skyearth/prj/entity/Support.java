@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import com.dim.jit.skyearth.engineer.entity.Engineer;
 
 /**
- * ÎÊÌâ´¦Àí¼ÇÂ¼
+ * é—®é¢˜å¤„ç†è®°å½•
  * 
  * @author yanming_dai
  * 
@@ -26,13 +26,13 @@ public class Support {
 	@Column(name="support_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer supportId;
-	//Ö§³ÖµÄÏîÄ¿
+	//æ”¯æŒçš„é¡¹ç›®
 	private Project project;
-	//¸ºÔğ¹¤³ÌÊ¦
+	//è´Ÿè´£å·¥ç¨‹å¸ˆ
 	private Engineer engineer;
-	// ´¦ÀíÈÕÆÚ
+	// å¤„ç†æ—¥æœŸ
 	private Date supportDate;
-	//´¦Àí½á¹û
+	//å¤„ç†ç»“æœ
 	private String result;
 
 	@Id

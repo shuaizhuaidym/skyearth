@@ -26,16 +26,16 @@ public class Engineer {
 	@Column(name="engineer_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer engineerId;
-	// ĞÕÃû
+	// å§“å
 	@Column(name="engineer_name")
 	private String engineerName;
-	// ÈëÖ°Ê±¼ä
+	// å…¥èŒæ—¶é—´
 	@Column(name="employ_date")
 	private Date employDate;
-	// ÉÃ³¤¼¼Êõ
+	// æ“…é•¿æŠ€æœ¯
 	@Column(name="skill")
 	private String skill;
-	//ÏîÄ¿Ö§³Ö¼ÇÂ¼
+	//é¡¹ç›®æ”¯æŒè®°å½•
 	@OneToMany(mappedBy="engineer")
 	private List<Support>supportRecords=new ArrayList<Support>();
 
