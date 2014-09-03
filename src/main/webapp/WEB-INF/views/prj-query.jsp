@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<jsp:include page="/menu-bootstrap.jsp"></jsp:include>
 			<div class="span10">
 				<div class="tb-head nav-header">
-					查询 <a> <img src="resource/common/excel.png" width="26" height="26" border="0" alt="export" align="right" />
+					查询 
+					<a>
+						<img src="${ctx}/resource/common/excel.png" width="26" height="26" border="0" alt="export" style="margin-right:32px"/>
 					</a>
 				</div>
 				<div class="sear-box">
