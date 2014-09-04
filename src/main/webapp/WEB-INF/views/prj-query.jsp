@@ -9,8 +9,9 @@
 			<div class="span10">
 				<div class="tb-head nav-header">
 					查询 
-					<a>
-						<img src="${ctx}/resource/common/excel.png" width="26" height="26" border="0" alt="export" style="margin-right:32px"/>
+					<a style="cursor:pointer">
+						导出Excel
+						<%-- <img src="${ctx}/resource/common/excel.png" width="20" height="20" border="0" alt="export" style="margin-right:32px"/> --%>
 					</a>
 				</div>
 				<div class="sear-box">
