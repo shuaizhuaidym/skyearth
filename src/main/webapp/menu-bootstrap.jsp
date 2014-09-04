@@ -125,7 +125,6 @@
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	}
 </style>
-<script src="VgZb_data/bootstrap.js"></script>
 <script type="text/javascript">
 	window.alert = function() {
 	};
@@ -139,8 +138,8 @@
 		else
 			$('head > link').filter(':first').replaceWith(defaultCSS);
 	}
-	$(document).ready(function() {
+	/* $(document).ready(function() {
 		var iframe_height = parseInt($('html').height());
 		window.parent.postMessage(iframe_height, 'http://bootsnipp.com');
-	});
+	}); */
 </script>

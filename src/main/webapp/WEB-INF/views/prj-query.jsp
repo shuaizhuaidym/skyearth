@@ -9,7 +9,7 @@
 			<div class="span10">
 				<div class="tb-head nav-header">
 					查询 
-					<a style="cursor:pointer">
+					<a href="javascript:void(0)" onclick="exportXLS();" class="shadow-font">
 						导出Excel
 						<%-- <img src="${ctx}/resource/common/excel.png" width="20" height="20" border="0" alt="export" style="margin-right:32px"/> --%>
 					</a>
@@ -83,5 +83,10 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function exportXLS(){
+			window.alert("not implements");
+		}
+	</script>
 </body>
 </html>
