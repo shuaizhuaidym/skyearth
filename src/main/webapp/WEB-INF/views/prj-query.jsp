@@ -8,14 +8,10 @@
 			<jsp:include page="/menu-bootstrap.jsp"></jsp:include>
 			<div class="span10">
 				<div class="tb-head nav-header">
-					查询 
-					<a href="javascript:void(0)" onclick="exportXLS();" class="shadow-font">
-						导出Excel
-						<%-- <img src="${ctx}/resource/common/excel.png" width="20" height="20" border="0" alt="export" style="margin-right:32px"/> --%>
-					</a>
+					查询 <input type="button" class="exportbtn" onclick="exportXLS();"/>
 				</div>
 				<div class="sear-box">
-					<form id="queryLeftForm" enctype="application/x-www-form-urlencoded" method="get">
+					<form id="queryLeftForm" action="${ctx}/process/query.action" enctype="application/x-www-form-urlencoded" method="get">
 						<div class="table-responsive;float:left;width:600px">
 							<table>
 								<tr>
@@ -83,9 +79,16 @@
 			</div>
 		</div>
 	</div>
+	<style type="text/css">
+		.exportbtn {
+			background: url("${ctx}/resource/common/icon.png") no-repeat scroll 0 -33px rgba(0, 0, 0, 0);
+			min-width: 20px;
+			border:none;
+		}
+	</style>
 	<script type="text/javascript">
 		function exportXLS(){
-			window.alert("not implements");
+			document.getElementById('queryLeftForm').submit();
 		}
 	</script>
 </body>

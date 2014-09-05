@@ -49,6 +49,30 @@
 							<td><input type="text" class="form-control" id="inputPassword"></td>
 						</tr>
 						<tr>
+							<td><label for="inputPassword" class="control-label col-xs-2">创建人</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label for="inputPassword" class="control-label col-xs-2">创建时间</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+						</tr>
+						<tr>
+							<td><label for="inputPassword" class="control-label col-xs-2">创建人所在部门</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label for="inputPassword" class="control-label col-xs-2">响应时间</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+						</tr>
+						<tr>
+							<td><label for="inputPassword" class="control-label col-xs-2">当前状态</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label for="inputPassword" class="control-label col-xs-2">项目阶段</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+						</tr>
+						<tr>
+							<td><label for="inputPassword" class="control-label col-xs-2">产品名称</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label for="inputPassword" class="control-label col-xs-2">产品版本</label></td>
+							<td><input type="text" class="form-control" id="inputPassword"></td>
+						</tr>
+						<tr>
 							<td>反馈人问题描述</td><td colspan="3"><textarea rows="4" cols="128" style="width:81.5%"></textarea></td>
 						</tr>
 						<tr>
