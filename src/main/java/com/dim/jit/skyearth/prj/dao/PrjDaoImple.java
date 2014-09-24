@@ -20,6 +20,4 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-
 }
