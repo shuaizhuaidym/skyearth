@@ -18,5 +18,11 @@ public class PrjServiceImple implements IPrjService {
 	public List<Project> findAllprojects() {
 		return prjDao.findAllProjects();
 	}
+	
+	@Override
+	public Integer createProject(Project project) {
+		prjDao.createOrUpdate(project);
+		return project.getPrjId();
+	}
 
 }
