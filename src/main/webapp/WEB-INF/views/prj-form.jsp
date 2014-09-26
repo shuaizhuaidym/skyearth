@@ -17,13 +17,13 @@
 
 				<div class="tb-head nav-header">新建项目</div>
 
-				<form action="${ctx}/prj/persist.action" enctype="application/x-www-form-urlencoded">
+				<form action="${ctx}/prj/create.action" method="post">
 					<table class="table table-striped table-bordered table-condensed form-table">
 						<tr>
 							<td><label for="inputEmail" class="control-label col-xs-2">项目编号</label></td>
 							<td><input type="email" class="form-control" id="inputEmail"></td>
 							<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
-							<td><input type="email" name="project.prjName" class="form-control" id="inputEmail"></td>
+							<td><input type="text" name="project.prjName" class="form-control"></td>
 						</tr>
 						<tr>
 							<td><label for="inputPassword" class="control-label col-xs-2">项目类型</label></td>

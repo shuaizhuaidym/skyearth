@@ -17,8 +17,6 @@ import com.dim.jit.skyearth.prj.service.IPrjService;
 public class PrjEditAction {
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	private Project project;
-
 	@Autowired
 	private IPrjService prjService;
 
@@ -27,7 +25,7 @@ public class PrjEditAction {
 		return "prj-form";
 	}
 
-	/**
+	/**	
 	 * 新建项目
 	 * 
 	 * @param project
@@ -48,13 +46,5 @@ public class PrjEditAction {
 	@RequestMapping(value = "/edit/{prjId}.action", method = RequestMethod.GET)
 	public String editProject(@PathVariable String prjId, Model model) {
 		return "redirect:/prj-edit";
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
 	}
 }
