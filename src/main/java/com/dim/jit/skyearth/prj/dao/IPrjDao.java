@@ -10,9 +10,7 @@ public interface IPrjDao<E> {
 	public Integer createOrUpdate(Project project);
 	
 	public List<Project> findAllProjects();
-	
-	public Integer saveOrUpdateProject(Project project);
-	
+		
 	public List<Project> findByHql(String hql);
 
 	public Session getCurrentSession();

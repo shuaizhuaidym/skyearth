@@ -24,5 +24,4 @@ public class PrjServiceImple implements IPrjService {
 		prjDao.createOrUpdate(project);
 		return project.getPrjId();
 	}
-
 }

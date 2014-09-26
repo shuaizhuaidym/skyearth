@@ -8,6 +8,4 @@ public interface IPrjService {
 	public Integer createProject(Project project);
 	
 	public List<Project> findAllprojects();
-	
-	public Integer saveOrUpdateProject(Project project);
 }
