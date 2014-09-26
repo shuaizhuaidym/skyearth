@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import com.dim.jit.skyearth.prj.entity.Project;
 
 public interface IPrjDao<E> {
+	public Integer createOrUpdate(Project project);
+	
 	public List<Project> findAllProjects();
 	
 	public Integer saveOrUpdateProject(Project project);

@@ -18,10 +18,11 @@ public class PrjServiceImple implements IPrjService {
 	public List<Project> findAllprojects() {
 		return prjDao.findAllProjects();
 	}
+	
 	@Override
-	public Integer saveOrUpdateProject(Project project) {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer createProject(Project project) {
+		prjDao.createOrUpdate(project);
+		return project.getPrjId();
 	}
 
 }

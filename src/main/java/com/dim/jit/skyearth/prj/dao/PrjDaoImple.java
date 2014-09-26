@@ -22,8 +22,9 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 	}
 
 	@Override
-	public Integer saveOrUpdateProject(Project project) {
-		// TODO Auto-generated method stub
+	public Integer createOrUpdate(Project project) {
+		getCurrentSession().saveOrUpdate(project);
 		return null;
 	}
+	
 }
