@@ -20,4 +20,10 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Integer saveOrUpdateProject(Project project) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -16,13 +17,13 @@
 
 				<div class="tb-head nav-header">新建项目</div>
 
-				<form action="/" enctype="application/x-www-form-urlencoded">
+				<form action="${ctx}/prj/persist.action" enctype="application/x-www-form-urlencoded">
 					<table class="table table-striped table-bordered table-condensed form-table">
 						<tr>
 							<td><label for="inputEmail" class="control-label col-xs-2">项目编号</label></td>
 							<td><input type="email" class="form-control" id="inputEmail"></td>
 							<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
-							<td><input type="email" class="form-control" id="inputEmail"></td>
+							<td><input type="email" name="project.prjName" class="form-control" id="inputEmail"></td>
 						</tr>
 						<tr>
 							<td><label for="inputPassword" class="control-label col-xs-2">项目类型</label></td>
@@ -80,6 +81,7 @@
 						</tr>
 					</table>
 					<button type="submit" class="btn btn-primary">保存</button>
+					<button type="reset" class="btn">返回</button>
 				</form>
 			</div>
 		</div>
