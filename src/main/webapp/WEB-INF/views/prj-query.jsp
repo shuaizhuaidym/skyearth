@@ -16,7 +16,7 @@
 							<table>
 								<tr>
 									<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
-									<td><input type="text" name="vo.prjName" class="form-control" id="inputEmail"></td>
+									<td><input type="text" name="prjName" class="form-control" id="inputEmail"></td>
 									<td><label for="inputEmail" class="control-label col-xs-2">反馈时间</label></td>
 									<td><input type="email" class="form-control" id="inputEmail"></td>
 									<td><label for="inputEmail" class="control-label col-xs-2">处理人</label></td>

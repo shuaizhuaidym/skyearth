@@ -14,6 +14,7 @@
 				</div>
 				<div>
 					<div id="lineCanvas" style="width: 480px; height: 240px; width: 50%; float: left"></div>
+					<div id="areaCanvas" style="width: 480px; height: 240px; width: 50%; float: right"></div>
 				</div>
 				<form>
 					<button type="submit" class="btn btn-primary">统计</button>
@@ -26,6 +27,7 @@
 	<script type="text/javascript" src="${ctx}/resource/chart/loongchart.histogram3d.js"></script>
 	<script type="text/javascript" src="${ctx}/resource/chart/loongchart.pie3d.js"></script>
 	<script type="text/javascript" src="${ctx}/resource/chart/loongchart.line.js"></script>
+	<script type="text/javascript" src="${ctx}/resource/chart/loongchart.area.js"></script>
 
 	<script type="text/javascript">
 		window.onload = function() {
@@ -246,6 +248,38 @@
 			llchart.SetSkin('BlackAndWhite');
 			llchart.SetOptions(lineOptions);
 			llchart.Draw(lineData);
+			//*******************************************************************
+			//area chart
+			//*******************************************************************
+            var sitea = [], /* siteb = [], */ labelsa = [];
+            for (var i = 0; i < 96; i++) {
+                sitea.push(30 + parseInt(Math.random() * 70));
+                //siteb.push(70 + parseInt(Math.random() * 30));
+                if (i % 4 == 0) { labelsa.push((i / 4).toString() + ":00"); }
+            }
+            var dataar = [
+                { text: 'sitea', value: sitea, color: '#000000', click: function(data, e) { alert('Click sitea! value is:' + data.vvalue); }, mouseover: function(data, e) { alert('Mouse over sitea! value is:' + data.vvalue); } }//,
+                //{ text: 'siteb', value: siteb, color: '#f68f70' }
+            ];
+
+            var optionsar = {
+                valueType: 'n', animationSteps: 30,
+                title: { content: 'This chart shows traffic of two sites in a day.' },
+                node: { linecolor: "#f3cece", linewidth: 1 },
+                subTitle: { content: 'The data is apocryphal.' },
+                valueAxis: { linewidth: 1, verticalcomputeP: true, heap: true },
+                labelAxis: { labels: labelsa},
+                legend: { elementtype: "l" },
+                scale: { linewidth: 1, backcolors: ['rgba(12,67,255,0.2)', 'rgba(0,191,255,0.2)'] },
+                yAxisTitle: { content: 'Calculated by how many clicks by users.' },
+                tip: { merge: true },
+                footer: { content: 'MIIT Statistics.', fontcolor: '#f8d8d8' }
+            };
+
+            window.larchart = new LChart.Area('areaCanvas', 'CN');
+            larchart.SetSkin('BlackAndWhite');
+            larchart.SetOptions(optionsar);
+            larchart.Draw(dataar);
 		};
 	</script>
 </body>
