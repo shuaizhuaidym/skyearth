@@ -18,6 +18,7 @@
 
 				<div class="tb-head nav-header">新建项目</div>
 				<form:form action="${ctx}/prj/create.action" modelAttribute="project" method="post">
+
 					<table class="table table-striped table-bordered table-condensed form-table">
 						<tr>
 							<td><label for="inputEmail" class="control-label col-xs-2">项目编号</label></td>
@@ -81,6 +82,7 @@
 						</tr>
 					</table>
 					<button type="submit" class="btn btn-primary">保存</button>
+					<button type="reset" class="btn">返回</button>
 				</form:form>
 			</div>
 		</div>

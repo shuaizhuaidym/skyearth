@@ -64,6 +64,7 @@
 				valueType : 'n',
 				animationSteps : 32,
 				bar : {
+					color : 'rgba(200,10,10,1)',
 					useSameColor : true
 				},
 				histogram : {

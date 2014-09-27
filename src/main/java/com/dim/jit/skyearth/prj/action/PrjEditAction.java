@@ -21,7 +21,7 @@ public class PrjEditAction {
 	protected final Logger logger = Logger.getLogger(getClass());
 	
 	private String test;
-	
+
 	@Autowired
 	private IPrjService prjService;
 
@@ -45,6 +45,12 @@ public class PrjEditAction {
 		return "redirect:/prj/query.action";
 	}
 
+	/**
+	 * 修改项目
+	 * @param prjId
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/edit/{prjId}.action", method = RequestMethod.GET)
 	public String editProject(@PathVariable String prjId, Model model) {
 		return "redirect:/prj-edit";

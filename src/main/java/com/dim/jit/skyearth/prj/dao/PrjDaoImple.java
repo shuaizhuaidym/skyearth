@@ -26,6 +26,4 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 		getCurrentSession().saveOrUpdate(project);
 		return project.getPrjId();
 	}
-	
-
 }
