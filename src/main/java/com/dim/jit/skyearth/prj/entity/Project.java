@@ -23,6 +23,10 @@ import com.dim.jit.skyearth.prj.commom.PrjStatus;
 public class Project {
 	// 项目标识
 	private Integer prjId;
+	
+	private String prjSerial;
+	//项目类型
+	private String prjType;
 	// 项目名称
 	private String prjName;
 	// 创建人标识
@@ -195,6 +199,24 @@ public class Project {
 
 	public void setEngineers(List<Support> engineers) {
 		this.engineers = engineers;
+	}
+
+	@Column(name = "prj_type")
+	public String getPrjType() {
+		return prjType;
+	}
+
+	public void setPrjType(String prjType) {
+		this.prjType = prjType;
+	}
+
+	@Column(name = "prj_serial")
+	public String getPrjSerial() {
+		return prjSerial;
+	}
+
+	public void setPrjSerial(String prjSerial) {
+		this.prjSerial = prjSerial;
 	}
 
 }

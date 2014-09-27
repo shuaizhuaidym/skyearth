@@ -24,7 +24,7 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 	@Override
 	public Integer createOrUpdate(Project project) {
 		getCurrentSession().saveOrUpdate(project);
-		return null;
+		return project.getPrjId();
 	}
 	
 

@@ -11,12 +11,12 @@
 					查询 <input type="button" class="exportbtn" onclick="exportXLS();"/>
 				</div>
 				<div class="sear-box">
-					<form id="queryLeftForm" action="${ctx}/process/query.action" enctype="application/x-www-form-urlencoded" method="get">
+					<form id="queryLeftForm" action="${ctx}/prj/query.action" method="post">
 						<div class="table-responsive;float:left;width:600px">
 							<table>
 								<tr>
 									<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
-									<td><input type="email" class="form-control" id="inputEmail"></td>
+									<td><input type="text" name="vo.prjName" class="form-control" id="inputEmail"></td>
 									<td><label for="inputEmail" class="control-label col-xs-2">反馈时间</label></td>
 									<td><input type="email" class="form-control" id="inputEmail"></td>
 									<td><label for="inputEmail" class="control-label col-xs-2">处理人</label></td>
@@ -37,7 +37,7 @@
 							</table>
 						</div>
 						<div style="float: right; margin-top: -42px; padding-right: 32px">
-							<a id="query_ticket" class="btn-search" href="javascript:">查询</a>
+							<a id="query_ticket" class="btn-search" href="javascript:query();">查询</a>
 						</div>
 					</form>
 				</div>
@@ -87,6 +87,9 @@
 		}
 	</style>
 	<script type="text/javascript">
+		function query(){
+			document.getElementById('queryLeftForm').submit();
+		}
 		function exportXLS(){
 			document.getElementById('queryLeftForm').submit();
 		}
