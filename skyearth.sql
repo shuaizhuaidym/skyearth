@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: skyearth
 -- ------------------------------------------------------
--- Server version	5.5.27
+-- Server version	5.5.27-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -700,7 +700,7 @@ CREATE TABLE `tb_engineer` (
 
 LOCK TABLES `tb_engineer` WRITE;
 /*!40000 ALTER TABLE `tb_engineer` DISABLE KEYS */;
-INSERT INTO `tb_engineer` VALUES (1,'Bill gates','2012-01-12 00:00:00','windows programing','135963245678'),(2,'jobs','2012-01-12 00:00:00','Mac programing','185963245678');
+INSERT INTO `tb_engineer` VALUES (1,'Gates','2012-02-18 00:00:00','Windows Language','13989783498'),(2,'Jobs','2012-02-18 00:00:00','Mac Language','13989783498');
 /*!40000 ALTER TABLE `tb_engineer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -713,20 +713,24 @@ DROP TABLE IF EXISTS `tb_project`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_project` (
   `prj_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `prj_name` varchar(2048) DEFAULT NULL,
+  `prj_serial` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `prj_name` varchar(2048) CHARACTER SET utf8 DEFAULT NULL,
+  `prj_type` varchar(45) CHARACTER SET utf8 NOT NULL,
   `creator_id` int(10) unsigned DEFAULT NULL,
-  `creator_dept` varchar(64) DEFAULT NULL,
+  `creator_dept` varchar(45) CHARACTER SET utf8 NOT NULL,
   `create_date` datetime DEFAULT NULL,
-  `client_desc` varchar(8192) DEFAULT NULL,
+  `client_desc` varchar(8192) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `contact_id` int(10) unsigned DEFAULT NULL,
-  `status` varchar(45) DEFAULT NULL,
-  `product_name` varchar(255) DEFAULT NULL,
-  `product_version` varchar(45) DEFAULT NULL,
-  `initial_solution` varchar(8192) DEFAULT NULL,
-  `real_cause` varchar(45) DEFAULT NULL,
+  `status` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `product_version` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `manager` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `industry` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `initial_solution` varchar(8192) CHARACTER SET utf8 DEFAULT NULL,
+  `real_cause` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `finish_date` datetime DEFAULT NULL,
   PRIMARY KEY (`prj_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -735,7 +739,7 @@ CREATE TABLE `tb_project` (
 
 LOCK TABLES `tb_project` WRITE;
 /*!40000 ALTER TABLE `tb_project` DISABLE KEYS */;
-INSERT INTO `tb_project` VALUES (1,'Plicement Department',1,'IPC','2014-08-09 00:00:00','net work in correct',2,'CREATED','identity gateway',NULL,NULL,NULL,NULL);
+INSERT INTO `tb_project` VALUES (1,'','Plicement Department','',1,'IPC','2014-02-18 00:00:00','GW not work',2,'CREATED','E GW','3.0.21.3','','','analyse log','net work not work','2014-09-01 00:00:00'),(2,'',NULL,'',NULL,'www',NULL,NULL,NULL,NULL,NULL,NULL,'','',NULL,NULL,NULL),(3,'www','www','www',NULL,'www',NULL,NULL,NULL,NULL,NULL,NULL,'','',NULL,NULL,NULL),(4,'NO001','project','type',NULL,'www',NULL,NULL,NULL,NULL,NULL,NULL,'','',NULL,NULL,NULL),(5,'NO1','Prj_test','prj-type',NULL,'ss',NULL,NULL,NULL,NULL,NULL,NULL,'','',NULL,NULL,NULL),(6,'prj_1','prj_1','prj_1',NULL,'prj_1',NULL,'å??é¦?äººé?®é¢?æ??è¿°',NULL,NULL,'prj_1',NULL,'prj_1','prj_1',NULL,'å¤?ç??äººæ??æ?¥ç»?æ??',NULL),(7,'item_0','item_0','item_0',NULL,'item_0',NULL,'å??é¦?äººé?®é¢?æ??è¿°',NULL,NULL,'item_0',NULL,'item_0','item_0',NULL,'å¤?ç??äººæ??æ?¥ç»?æ??',NULL),(8,'com','com','com',NULL,'com',NULL,'å??é¦?äººé?®é¢?æ??è¿°',NULL,NULL,'com',NULL,'com','com',NULL,'å¤?ç??äººæ??æ?¥ç»?æ??',NULL),(9,'date','date','date',NULL,'date',NULL,'å??é¦?äººé?®é¢?æ??è¿°',NULL,NULL,'date',NULL,'date','date',NULL,'å??é¦?äººé?®é¢?æ??è¿°',NULL),(10,'ABC','ABC','ABC',NULL,'ABC',NULL,'??????',NULL,NULL,'ABC',NULL,'ABC','ABC',NULL,'??????',NULL),(11,'????','????','????',NULL,'????',NULL,'????',NULL,NULL,'????',NULL,'????','????',NULL,'????',NULL),(66,'11','projecta','type',NULL,'ipc',NULL,'中国',NULL,NULL,NULL,NULL,'manager','abc',NULL,NULL,NULL),(67,'??','??','??',NULL,'??',NULL,'??',NULL,NULL,'??',NULL,'??','??',NULL,'??',NULL),(68,'??','??','??',NULL,'??',NULL,'??',NULL,NULL,'??',NULL,'??','??',NULL,'??',NULL),(69,'创建人','创建人','创建人',NULL,'创建人',NULL,'创建人',NULL,NULL,'创建人',NULL,'创建人','创建人',NULL,'创建人',NULL);
 /*!40000 ALTER TABLE `tb_project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -747,12 +751,11 @@ DROP TABLE IF EXISTS `tb_support`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_support` (
-  `prj_id` int(10) unsigned NOT NULL,
-  `support_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `prj_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `engineer_id` int(10) unsigned NOT NULL,
   `support_date` datetime NOT NULL,
   `result` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`support_id`)
+  PRIMARY KEY (`prj_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -798,4 +801,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-08-30 11:57:05
+-- Dump completed on 2014-09-28 22:40:09
