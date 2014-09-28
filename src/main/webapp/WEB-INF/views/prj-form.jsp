@@ -21,64 +21,64 @@
 
 					<table class="table table-striped table-bordered table-condensed form-table">
 						<tr>
-							<td><label for="inputEmail" class="control-label col-xs-2">项目编号</label></td>
+							<td><label class="control-label col-xs-2">项目编号</label></td>
 							<td><input type="text" name="prjSerial" class="form-control"></td>
-							<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
+							<td><label class="control-label col-xs-2">项目名称</label></td>
 							<td><input type="text" name="prjName" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">项目类型</label></td>
-							<td><input type="text" name="prjType" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">反馈人</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">项目类型</label></td>
+							<td><input type="text" name="prjType" class="form-control"></td>
+							<td><label class="control-label col-xs-2">项目经理</label></td>
+							<td><input type="text" name="manager" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">项目类型</label></td>
-							<td><input type="text" name="" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">反馈人</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">项目所属行业</label></td>
+							<td><input type="text" name="industry" class="form-control"></td>
+							<td><label class="control-label col-xs-2">反馈人</label></td>
+							<td><input type="text" name="contact" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">反馈时间</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">反馈人联系方式</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">反馈时间</label></td>
+							<td><input type="text" name="createDate" class="form-control"></td>
+							<td><label class="control-label col-xs-2">反馈人联系方式</label></td>
+							<td><input type="text" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">处理人</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">响应时间</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">处理人</label></td>
+							<td><input type="text" name="engineer" class="form-control"></td>
+							<td><label class="control-label col-xs-2">响应时间</label></td>
+							<td><input type="text" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">创建人</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">创建时间</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">创建人</label></td>
+							<td><input type="text" name="creator" class="form-control"></td>
+							<td><label class="control-label col-xs-2">创建时间</label></td>
+							<td><input type="text" name="createDate" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">创建人所在部门</label></td>
-							<td><input type="text" name="creatorDept" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">响应时间</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">创建人所在部门</label></td>
+							<td><input type="text" name="creatorDept" class="form-control"></td>
+							<td><label class="control-label col-xs-2">响应时间</label></td>
+							<td><input type="text" name="" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">当前状态</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">项目阶段</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">当前状态</label></td>
+							<td><input type="text" name="status" class="form-control"></td>
+							<td><label class="control-label col-xs-2">项目阶段</label></td>
+							<td><input type="text" name="stage" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label for="inputPassword" class="control-label col-xs-2">产品名称</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
-							<td><label for="inputPassword" class="control-label col-xs-2">产品版本</label></td>
-							<td><input type="text" class="form-control" id="inputPassword"></td>
+							<td><label class="control-label col-xs-2">产品名称</label></td>
+							<td><input type="text" name="productName" class="form-control"></td>
+							<td><label class="control-label col-xs-2">产品版本</label></td>
+							<td><input type="text" name="productVersion" class="form-control"></td>
 						</tr>
 						<tr>
-							<td>反馈人问题描述</td><td colspan="3"><textarea rows="4" cols="128" style="width:81.5%"></textarea></td>
+							<td>反馈人问题描述</td><td colspan="3"><textarea name="clientDesc" rows="4" cols="128" style="width:81.5%"></textarea></td>
 						</tr>
 						<tr>
-							<td>处理人排查结果</td><td colspan="3"><textarea rows="4" cols="128" style="width:81.5%"></textarea></td>
+							<td>处理人排查结果</td><td colspan="3"><textarea name="realCause" rows="4" cols="128" style="width:81.5%"></textarea></td>
 						</tr>
 					</table>
 					<button type="submit" class="btn btn-primary">保存</button>

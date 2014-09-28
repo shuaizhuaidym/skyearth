@@ -32,7 +32,13 @@ public class Support {
 	private Engineer engineer;
 	// 处理日期
 	private Date supportDate;
-	//处理结果
+	//问题描述
+	private String desc;
+	//真实原因
+	private String realCause;
+	//问题分类
+	private String category;
+	//处理结果 成功/失败
 	private String result;
 
 	@Id
@@ -82,6 +88,30 @@ public class Support {
 
 	public void setProject(Project project) {
 		this.project = project;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getRealCause() {
+		return realCause;
+	}
+
+	public void setRealCause(String realCause) {
+		this.realCause = realCause;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

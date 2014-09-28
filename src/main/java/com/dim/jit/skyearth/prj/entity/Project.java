@@ -23,13 +23,13 @@ import com.dim.jit.skyearth.prj.commom.PrjStatus;
 public class Project {
 	// 项目标识
 	private Integer prjId;
-	
+	//项目编号
 	private String prjSerial;
 	//项目类型
 	private String prjType;
 	// 项目名称
 	private String prjName;
-	// 创建人标识
+	// 创建人
 	private Engineer creator;
 	// 创建人部门
 	private String creatorDept;
@@ -37,10 +37,12 @@ public class Project {
 	private Date createDate;
 	// 用户问题描述
 	private String clientDesc;
+	//项目经理
+	private String manager;
+	//所属行业
+	private String industry;
 	// 联络人
 	private Engineer contact;
-	//项目支持记录
-	private List<Support> engineers = new ArrayList<Support>();
 	// 当前状态
 	private PrjStatus status;
 	// 产品名称
@@ -188,19 +190,6 @@ public class Project {
 		this.contact = contact;
 	}
 
-	@OneToMany
-	@JoinColumn(name="project")
-//	@JoinTable(name = "tb_support", 
-//			joinColumns = { @JoinColumn(name = "project_id") }, 
-//			inverseJoinColumns = { @JoinColumn(name = "engineer_id") })
-	public List<Support> getEngineers() {
-		return engineers;
-	}
-
-	public void setEngineers(List<Support> engineers) {
-		this.engineers = engineers;
-	}
-
 	@Column(name = "prj_type")
 	public String getPrjType() {
 		return prjType;
@@ -217,6 +206,22 @@ public class Project {
 
 	public void setPrjSerial(String prjSerial) {
 		this.prjSerial = prjSerial;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
+	}
+
+	public String getIndustry() {
+		return industry;
+	}
+
+	public void setIndustry(String industry) {
+		this.industry = industry;
 	}
 
 }
