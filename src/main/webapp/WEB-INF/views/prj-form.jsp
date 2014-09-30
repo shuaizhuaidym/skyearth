@@ -52,7 +52,7 @@
 						</tr>
 						<tr>
 							<td><label class="control-label col-xs-2">创建人</label></td>
-							<td><input type="text" name="creator.engineerName" class="form-control"></td>
+							<td><input type="text" name="creator.engineerId" class="form-control"></td>
 							<td><label class="control-label col-xs-2">创建时间</label></td>
 							<td><input type="text" name="createDate" class="form-control"></td>
 						</tr>
