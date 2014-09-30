@@ -52,7 +52,7 @@
 						</tr>
 						<tr>
 							<td><label class="control-label col-xs-2">创建人</label></td>
-							<td><input type="text" name="creator" class="form-control"></td>
+							<td><input type="text" name="creator.engineerName" class="form-control"></td>
 							<td><label class="control-label col-xs-2">创建时间</label></td>
 							<td><input type="text" name="createDate" class="form-control"></td>
 						</tr>
@@ -64,7 +64,8 @@
 						</tr>
 						<tr>
 							<td><label class="control-label col-xs-2">当前状态</label></td>
-							<td><input type="text" name="status" class="form-control"></td>
+							<td>
+								<form:select path="status" items="${status}" cssClass="form-control"></form:select>
 							<td><label class="control-label col-xs-2">项目阶段</label></td>
 							<td><input type="text" name="stage" class="form-control"></td>
 						</tr>

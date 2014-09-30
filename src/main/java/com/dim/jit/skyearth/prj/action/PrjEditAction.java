@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dim.jit.skyearth.prj.commom.PrjStatus;
 import com.dim.jit.skyearth.prj.entity.Project;
 import com.dim.jit.skyearth.prj.service.IPrjService;
 
@@ -20,13 +21,13 @@ import com.dim.jit.skyearth.prj.service.IPrjService;
 public class PrjEditAction {
 	protected final Logger logger = Logger.getLogger(getClass());
 	
-	private String test;
-
 	@Autowired
 	private IPrjService prjService;
 
 	@RequestMapping(value = "/new.action")
-	public String newProject() {
+	public String newProject(Model model) {
+		model.addAttribute("project", new Project());
+		model.addAttribute("status", PrjStatus.getItems());
 		return "prj-form";
 	}
 	
@@ -38,9 +39,6 @@ public class PrjEditAction {
 	@RequestMapping(value = "/create.action", method = RequestMethod.POST)
 	public String createProject(@ModelAttribute("project") Project project, BindingResult result, Model model,
 			HttpServletRequest request) {
-		logger.debug("project:"+project);
-		logger.debug("name:" + project.getPrjName());
-
 		prjService.createProject(project);
 		return "redirect:/prj/query.action";
 	}
@@ -54,11 +52,5 @@ public class PrjEditAction {
 	@RequestMapping(value = "/edit/{prjId}.action", method = RequestMethod.GET)
 	public String editProject(@PathVariable String prjId, Model model) {
 		return "redirect:/prj-edit";
-	}
-	public String getTest() {
-		return test;
-	}
-	public void setTest(String test) {
-		this.test = test;
 	}
 }
