@@ -48,14 +48,16 @@
 						<td style="width: 5%">创建人</td>
 						<td style="width: 10%">创建时间</td>
 						<td style="width: 20%">问题描述</td>
-						<td style="width: 10%">联系人</td>
+						<td style="width: 7%">联系人</td>
 						<td style="width: 10%">产品名称</td>
-						<td style="width: 5%">状态</td>
+						<td style="width: 8%">状态</td>
 					</tr>
 					<c:forEach var="prj" varStatus="status" items="${projects}">
 						<tr>
-							<td>${status.index}</td>
-							<td>${prj.prjName}</td>
+							<td style="text-align:center">${status.count}</td>
+							<td>
+								<a href="${ctx}/prj/edit/${prj.prjId}.action">${prj.prjName}</a>
+							</td>
 							<td>${prj.creator.engineerName}</td>
 							<td><fmt:formatDate value="${prj.createDate}" pattern="yyyy-MM-dd"/></td>
 							<td>${prj.clientDesc}</td>

@@ -51,6 +51,9 @@ public class PrjEditAction {
 	 */
 	@RequestMapping(value = "/edit/{prjId}.action", method = RequestMethod.GET)
 	public String editProject(@PathVariable String prjId, Model model) {
-		return "redirect:/prj-edit";
+		Project project=prjService.get(Integer.valueOf(prjId));
+		model.addAttribute("project", project);
+		model.addAttribute("status", PrjStatus.getItems());
+		return "prj-edit";
 	}
 }

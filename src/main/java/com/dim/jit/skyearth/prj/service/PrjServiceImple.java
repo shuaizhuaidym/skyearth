@@ -20,6 +20,11 @@ public class PrjServiceImple implements IPrjService {
 	}
 	
 	@Override
+	public Project get(Integer prjId) {
+		return prjDao.get(prjId);
+	}
+	
+	@Override
 	public Integer createProject(Project project) {
 		prjDao.createOrUpdate(project);
 		return project.getPrjId();
