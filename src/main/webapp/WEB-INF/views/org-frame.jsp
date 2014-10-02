@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,9 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<jsp:include page="/WEB-INF/views/org-tree.jsp"></jsp:include>
-			<div class="span10">wwww</div>
+			<div class="span10">
+				<div class="tb-head nav-header">组织机构管理</div>
+			</div>
 		</div>
 	</div>
 </body>

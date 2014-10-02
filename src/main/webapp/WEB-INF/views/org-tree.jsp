@@ -1,54 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<body>
-	<link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
-	<script type="text/javascript" src="../../adapter/ext/ext-base.js"></script><script type="text/javascript" src="${ctx}/resource/extjs/ext-all-3.4.0.js"></script>
-<div class="span2">
-	<div id="div_tree">tree</div>
-</div>
-<script type="text/javascript">
-		Ext.BLANK_IMAGE_URL = '${ctx}/images/default/s.gif';
-		$(function() {
-			var treeRoot = new Ext.tree.AsyncTreeNode({
-				id : "0",
-				text : "组织机构管理",
-				expanded : true
-			});
-			var tree = new Ext.tree.TreePanel({
-				id : "orgTree",
-				renderTo : 'div_tree',
-				autoScroll : true,
-				animate : true,
-				enableDD : true,
-				containerScroll : true,
-				border : false,
-				rootVisible : false,
-				root : treeRoot,
-				loader : new Ext.tree.TreeLoader({
-					dataUrl : "${ctx}/org/tree.action",
-					baseParams : {
-						parent_id : 0
-					},
-					clearOnLoad : true,
+<link rel="stylesheet" type="text/css" href="${ctx}/resource/extjs/css/ext-all.css" />
+<script type="text/javascript" src="${ctx}/resource/extjs/ext-base-3.4.0.js"></script>
+<script type="text/javascript" src="${ctx}/resource/extjs/ext-all-3.4.0.js"></script>
+<div class="span2" style="width: 14.5299%; margin: 0">
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title nav-header">项目管理</h4>
+			</div>
+		</div>
+	</div>
+	<div id="div_tree"></div>
+	<script type="text/javascript">
+		Ext.BLANK_IMAGE_URL = '${ctx}/resource/extjs/images/default/s.gif';
+		Ext.onReady(function(){
+		    var tree = new Ext.tree.TreePanel({
+		        renderTo:'div_tree',
+		        useArrows:true,
+		        autoScroll:true,
+		        animate:true,
+		        enableDD:true,
+		        containerScroll: true,
+		        rootVisible: false,
+		        frame: true,
+		        root: {
+		            nodeType: 'async'
+		        },
+		        
+		        // auto create TreeLoader
+		        dataUrl: '${ctx}/resource/extjs/check-nodes.json',
+		        
+		        listeners: {
+		            'checkchange': function(node, checked){
+		                if(checked){
+		                    node.getUI().addClass('complete');
+		                }else{
+		                    node.getUI().removeClass('complete');
+		                }
+		            }
+		        }
+		    });
 
-					listeners : {
-						"beforeload" : function(treeloader, node) {
-							try {
-								treeloader.baseParams.parent_id = node.id;
-							} catch (e) {
-							}
-						}
-					}
-				})
-			});
-			tree.expandAll();
+		    tree.getRootNode().expand(true);
 		});
 	</script>
-</body>
-</html>
+</div>

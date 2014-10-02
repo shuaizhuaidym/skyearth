@@ -11,4 +11,9 @@ public class OrgAction {
 	String frame(){
 		return "org-frame";
 	}
+	
+	@RequestMapping(value="/tree.action")
+	String tree(){
+		return "org-tree";
+	}
 }
