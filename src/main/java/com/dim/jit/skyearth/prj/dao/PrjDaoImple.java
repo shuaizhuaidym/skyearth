@@ -1,6 +1,7 @@
 package com.dim.jit.skyearth.prj.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -16,8 +17,8 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 	}
 
 	@Override
-	public List<Project> findByHql(String hql) {
-		// TODO Auto-generated method stub
+	public List<Project> findByHql(String hql, Map<String, String> params) {
+//		return getCurrentSession().get(Project.class, params);
 		return null;
 	}
 
@@ -25,5 +26,10 @@ public class PrjDaoImple extends AbstractDaoImple<Project> implements IPrjDao<Pr
 	public Integer createOrUpdate(Project project) {
 		getCurrentSession().saveOrUpdate(project);
 		return project.getPrjId();
+	}
+
+	@Override
+	public Project get(Integer prjId) {
+		return (Project)getCurrentSession().get(Project.class, prjId);
 	}
 }
