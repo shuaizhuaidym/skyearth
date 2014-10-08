@@ -10,7 +10,7 @@
 				<div class="tb-head nav-header">
 					查询 <input type="button" class="exportbtn" onclick="exportXLS();"/>
 				</div>
-				<div class="sear-box">
+				<div class="srch">
 					<form id="queryLeftForm" action="${ctx}/prj/query.action" method="post">
 						<div class="table-responsive;float:left;width:600px">
 							<table>
