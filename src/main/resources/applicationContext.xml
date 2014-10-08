@@ -40,17 +40,31 @@
 		<!-- package contains entity -->
 		<property name="packagesToScan" value="com.dim.jit.skyearth"></property>
 		<!-- JBPM Mapping files -->
-		<property name="mappingLocations">
-			<list>
-				<value> classpath:jbpm.execution.hbm.xml </value>
-				<value> classpath:jbpm.history.hbm.xml </value>
-				<value> classpath:jbpm.identity.hbm.xml </value>
-				<value> classpath:jbpm.repository.hbm.xml </value>
-				<value> classpath:jbpm.task.hbm.xml </value>
-			</list>
-		</property>		
+		<!-- <property name="mappingLocations"> <list> <value> classpath:jbpm.execution.hbm.xml </value> <value> classpath:jbpm.history.hbm.xml 
+			</value> <value> classpath:jbpm.identity.hbm.xml </value> <value> classpath:jbpm.repository.hbm.xml </value> <value> classpath:jbpm.task.hbm.xml 
+			</value> </list> </property> -->
 	</bean>
 
+	<bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+		<property name="jdbcUrl" value="jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000" />
+		<property name="jdbcDriver" value="org.h2.Driver" />
+		<property name="jdbcUsername" value="sa" />
+		<property name="jdbcPassword" value="" />
+		<property name="databaseSchemaUpdate" value="true" />
+		<property name="jobExecutorActivate" value="false" />
+		<property name="mailServerHost" value="mail.my-corp.com" />
+		<property name="mailServerPort" value="5025" />
+	</bean>
+
+	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+		<property name="processEngineConfiguration" ref="processEngineConfiguration" />
+	</bean>
+
+	<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
+	<bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService" />
+	<bean id="taskService" factory-bean="processEngine" factory-method="getTaskService" />
+	<bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService" />
+	<bean id="managementService" factory-bean="processEngine" factory-method="getManagementService" />
 	<!-- 事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
@@ -63,8 +77,7 @@
 	<!-- <aop:config> <aop:advisor advice-ref="mytx" pointcut="execution(* com.service.*.*(..))" /> </aop:config> -->
 
 	<!-- 集成jbpm -->
-	<bean id="springHelper" class="org.jbpm.pvm.internal.processengine.SpringHelper">
-		<property name="jbpmCfg" value="jbpm.cfg.xml" />
-	</bean>
-	<bean id="processEngine" factory-bean="springHelper" factory-method="createProcessEngine"></bean>
+	<!-- <bean id="springHelper" class="org.jbpm.pvm.internal.processengine.SpringHelper"> <property name="jbpmCfg" value="jbpm.cfg.xml" 
+		/> </bean> -->
+	<!-- <bean id="processEngine" factory-bean="springHelper" factory-method="createProcessEngine"></bean> -->
 </beans>

@@ -9,9 +9,8 @@ import java.util.zip.ZipInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jbpm.api.HistoryService;
-import org.jbpm.api.ProcessEngine;
-import org.jbpm.api.history.HistoryProcessInstance;
+import org.activiti.engine.HistoryService;
+import org.activiti.engine.ProcessEngine;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,11 +35,11 @@ public class PrjProcessAction {
 
 		try {
 			HistoryService hs = engine.getHistoryService();
-			List<HistoryProcessInstance> hpis = hs.createHistoryProcessInstanceQuery()
-					.processDefinitionId("ProcessDocument1-2").list();
-			for (HistoryProcessInstance historyProcessInstance : hpis) {
-				System.out.println(historyProcessInstance.getProcessInstanceId());
-			}
+//			List<HistoryProcessInstance> hpis = hs.createHistoryProcessInstanceQuery()
+//					.processDefinitionId("ProcessDocument1-2").list();
+//			for (HistoryProcessInstance historyProcessInstance : hpis) {
+//				System.out.println(historyProcessInstance.getProcessInstanceId());
+//			}
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}
