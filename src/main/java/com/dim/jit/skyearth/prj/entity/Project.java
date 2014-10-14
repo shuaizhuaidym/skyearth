@@ -170,6 +170,7 @@ public class Project {
 	}
 
 	@Column(name = "finish_date")
+	@DateTimeFormat(iso = ISO.DATE_TIME, pattern = "yyyy-MM-dd")
 	public Date getFinishDate() {
 		return finishDate;
 	}
