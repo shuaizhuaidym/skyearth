@@ -22,19 +22,17 @@
 html {
 	margin: 0";
 	padding: 0;
-	height: 100%;
 }
 
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
-	height: 100%;
 }
 
-.sear-box {
+.srch {
 	background: #EEF1F8;
 }
-.sear-box input{
+.srch input{
 	width:128px;
 }
 @media ( max-width : 980px) {
