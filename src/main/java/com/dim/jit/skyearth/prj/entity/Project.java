@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 import com.dim.jit.skyearth.engineer.entity.Engineer;
 import com.dim.jit.skyearth.prj.commom.PrjStatus;
 
@@ -25,9 +27,9 @@ import com.dim.jit.skyearth.prj.commom.PrjStatus;
 public class Project {
 	// 项目标识
 	private Integer prjId;
-	//项目编号
+	// 项目编号
 	private String prjSerial;
-	//项目类型
+	// 项目类型
 	private String prjType;
 	// 项目名称
 	private String prjName;
@@ -39,9 +41,9 @@ public class Project {
 	private Date createDate;
 	// 用户问题描述
 	private String clientDesc;
-	//项目经理
+	// 项目经理
 	private String manager;
-	//所属行业
+	// 所属行业
 	private String industry;
 	// 联络人
 	private Engineer contact;
@@ -57,6 +59,18 @@ public class Project {
 	private String realCause;
 	// 结束时间
 	private Date finishDate;
+	// 是否重复出现的问题
+	private Boolean duplicated;
+
+	@Column(name = "duplicated")
+	public Boolean getRepeat() {
+		return duplicated;
+	}
+
+	public void setRepeat(Boolean repeat) {
+		this.duplicated = repeat;
+	}
+
 	// 支持记录
 	private List<Support> supportRecord = new ArrayList<Support>();
 
@@ -163,7 +177,7 @@ public class Project {
 	}
 
 	@OneToMany
-	@JoinColumn(name="prj_id")
+	@JoinColumn(name = "prj_id")
 	public List<Support> getSupportRecord() {
 		return supportRecord;
 	}
@@ -172,7 +186,7 @@ public class Project {
 		this.supportRecord = supportRecord;
 	}
 
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "creator_id")
 	public Engineer getCreator() {
 		return creator;
