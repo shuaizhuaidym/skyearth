@@ -17,7 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.dim.jit.skyearth.engineer.entity.Engineer;
 import com.dim.jit.skyearth.prj.commom.PrjStatus;
@@ -104,6 +105,7 @@ public class Project {
 	}
 
 	@Column(name = "create_date")
+	@DateTimeFormat(iso = ISO.DATE_TIME, pattern = "yyyy-MM-dd")
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -168,6 +170,7 @@ public class Project {
 	}
 
 	@Column(name = "finish_date")
+	@DateTimeFormat(iso = ISO.DATE_TIME, pattern = "yyyy-MM-dd")
 	public Date getFinishDate() {
 		return finishDate;
 	}
