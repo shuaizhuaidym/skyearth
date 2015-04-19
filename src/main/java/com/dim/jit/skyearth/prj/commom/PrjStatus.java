@@ -9,7 +9,7 @@ import java.util.Map;
  *
  */
 public enum PrjStatus {
-	CREATED("新建"), PROCESSING("处理中"), SUSPEND("暂停"), PROPOSED("给出方案"), FINISHED("结束");
+	CREATED("created"), PROCESSING("processing"), SUSPEND("suspend"), PROPOSED("resolved"), FINISHED("finished");
 
 	private String name;
 
