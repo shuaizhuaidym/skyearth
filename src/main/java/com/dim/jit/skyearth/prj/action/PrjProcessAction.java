@@ -11,7 +11,10 @@ import java.util.zip.ZipInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.activiti.engine.FormService;
 import org.activiti.engine.HistoryService;
+import org.activiti.engine.IdentityService;
+import org.activiti.engine.ManagementService;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngines;
 import org.activiti.engine.RepositoryService;
@@ -31,7 +34,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PrjProcessAction {
 
 	@Autowired
-	private ProcessEngine engine;
+	private ProcessEngine processEngine;
+	@Autowired
+	private TaskService taskService;
 
 	@RequestMapping(value = "/process/{prjId}.action")
 	public String process(@PathVariable String prjId) {
@@ -42,12 +47,12 @@ public class PrjProcessAction {
 	public String deploy(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		try {
-			HistoryService hs = engine.getHistoryService();
-			// List<HistoryProcessInstance> hpis = hs.createHistoryProcessInstanceQuery()
-			// .processDefinitionId("ProcessDocument1-2").list();
-			// for (HistoryProcessInstance historyProcessInstance : hpis) {
-			// System.out.println(historyProcessInstance.getProcessInstanceId());
-			// }
+			List<Task> tasks = taskService.createTaskQuery()
+				    .taskAssignee("kermit")
+				    .processVariableValueEquals("orderId", "0815")
+				    .orderByTaskDueDate()
+				    .asc()
+				    .list();
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}

@@ -5,14 +5,14 @@
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<jsp:include page="/menu-bootstrap.jsp"></jsp:include>
+			<jsp:include page="/menu-bootstrap.jsp"/>
 			<div class="span10">
 				<div class="tb-head nav-header">
 					查询 <input type="button" class="exportbtn" onclick="exportXLS();"/>
 				</div>
 				<div class="srch">
 					<form id="queryLeftForm" action="${ctx}/prj/query.action" method="post">
-						<div class="table-responsive;float:left;width:600px">
+						<div class="table-responsive;float:left;">
 							<table>
 								<tr>
 									<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
