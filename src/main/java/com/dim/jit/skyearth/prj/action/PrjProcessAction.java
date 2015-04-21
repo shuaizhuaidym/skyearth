@@ -32,9 +32,12 @@ public class PrjProcessAction {
 
 	@Autowired
 	private ProcessEngine processEngine;
-	
+
 	@Autowired
 	private RepositoryService repositoryService;
+
+	@Autowired
+	private TaskService taskService;
 
 	@RequestMapping(value = "/process/{prjId}.action")
 	public String process(@PathVariable String prjId) {
@@ -45,8 +48,15 @@ public class PrjProcessAction {
 	public String deploy(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		try {
-			//TODO task query
-			System.out.println("hallo querying");
+			List<Task> tasks = taskService.createTaskQuery()
+				    .taskAssignee("kermit")
+				    .processVariableValueEquals("orderId", "0815")
+				    .orderByTaskDueDate()
+				    .asc()
+				    .list();
+			for(Task tsk:tasks){
+				System.out.println(tsk.getName());
+			}
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}
@@ -77,6 +87,7 @@ public class PrjProcessAction {
 	 * 启动流程
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	@RequestMapping(value = "/start.action")
 	public String start(){
 		// start

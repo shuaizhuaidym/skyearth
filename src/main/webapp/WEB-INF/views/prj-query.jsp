@@ -5,14 +5,14 @@
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<jsp:include page="/menu-bootstrap.jsp"></jsp:include>
+			<jsp:include page="/menu-bootstrap.jsp"/>
 			<div class="span10">
 				<div class="tb-head nav-header">
 					查询 <input type="button" class="exportbtn" onclick="exportXLS();"/>
 				</div>
 				<div class="srch">
 					<form id="queryLeftForm" action="${ctx}/prj/query.action" method="post">
-						<div class="table-responsive;float:left;width:600px">
+						<div class="table-responsive;float:left;">
 							<table>
 								<tr>
 									<td><label for="inputEmail" class="control-label col-xs-2">项目名称</label></td>
@@ -42,15 +42,15 @@
 					</form>
 				</div>
 				<table class="table table-striped table-bordered table-condensed">
-					<tr>
-						<td style="width: 3%">序号</td>
-						<td style="width: 20%">项目名称</td>
-						<td style="width: 5%">创建人</td>
-						<td style="width: 10%">创建时间</td>
-						<td style="width: 20%">问题描述</td>
-						<td style="width: 7%">联系人</td>
-						<td style="width: 10%">产品名称</td>
-						<td style="width: 8%">状态</td>
+					<tr style=";font-weight:bold;background-color:#00ff00;">
+						<td style="width: 3%;font-weight:bold;background-color:#167ac6">序号</td>
+						<td style="width: 20%;font-weight:bold;background-color:#167ac6">项目名称</td>
+						<td style="width: 5%;font-weight:bold;background-color:#167ac6">创建人</td>
+						<td style="width: 10%;font-weight:bold;background-color:#167ac6">创建时间</td>
+						<td style="width: 20%;font-weight:bold;background-color:#167ac6">问题描述</td>
+						<td style="width: 7%;font-weight:bold;background-color:#167ac6">联系人</td>
+						<td style="width: 10%;font-weight:bold;background-color:#167ac6">产品名称</td>
+						<td style="width: 8%;font-weight:bold;background-color:#167ac6">状态</td>
 					</tr>
 					<c:forEach var="prj" varStatus="status" items="${projects}">
 						<tr>
