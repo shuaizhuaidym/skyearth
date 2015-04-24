@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
+
 <%@ page import="org.activiti.engine.repository.ProcessDefinition" %>
 
 <%@ page import="org.activiti.engine.runtime.ProcessInstance"  %>
+<%@ page import="java.util.List"  %>
+<%@ page import="java.util.ArrayList"  %>
 <html>
 <body>
 	<div class="container-fluid">
@@ -24,6 +27,7 @@
 							<td>操作</td>
 						</tr>
 						<%
+							List<ProcessDefinition> list=new ArrayList<ProcessDefinition>();
 							for (ProcessDefinition pd : list) {
 						%>
 						<tr>
@@ -46,18 +50,14 @@
 							<td>状态</td>
 							<td>操作</td>
 						</tr>
-						<%
-							for (ProcessInstance pi : piList) {
-						%>
+						
 						<tr>
-							<td><%=pi.getId()%></td>
-							<td><%=pi.findActiveActivityNames()%></td>
-							<td><%=pi.getState()%></td>
-							<td><a href="view.jsp?id=<%=pi.getId()%>">查看</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="view.jsp?id">查看</a></td>
 						</tr>
-						<%
-							}
-						%>
+						
 					</table>
 
 					<h2>任务列表</h2>
@@ -67,17 +67,13 @@
 							<td>名称</td>
 							<td>操作</td>
 						</tr>
-						<%
-							for (Task task : taskList) {
-						%>
+						
 						<tr>
-							<td><%=task.getId()%></td>
-							<td><%=task.getName()%></td>
-							<td><a href="<%=task.getFormResourceName()%>?taskId=<%=task.getId()%>">查看</a><br /></td>
+							<td></td>
+							<td></td>
+							<td><a href="?taskId=">查看</a><br /></td>
 						</tr>
-						<%
-							}
-						%>
+						
 					</table>
 				</div>
 			</div>

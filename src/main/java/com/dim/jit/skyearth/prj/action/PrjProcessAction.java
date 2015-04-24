@@ -44,25 +44,6 @@ public class PrjProcessAction {
 		return "prj-process";
 	}
 
-	@RequestMapping(value = "/query.action")
-	public String deploy(Model model, HttpServletRequest request, HttpServletResponse response) {
-
-		try {
-			List<Task> tasks = taskService.createTaskQuery()
-				    .taskAssignee("kermit")
-				    .processVariableValueEquals("orderId", "0815")
-				    .orderByTaskDueDate()
-				    .asc()
-				    .list();
-			for(Task tsk:tasks){
-				System.out.println(tsk.getName());
-			}
-		} catch (BeansException e) {
-			e.printStackTrace();
-		}
-		return "process/prcs-query";
-	}
-
 	/**
 	 * 发布流程
 	 * @return
@@ -82,7 +63,32 @@ public class PrjProcessAction {
 		}
 		return "redirect:/process/query.action";
 	}
-	
+	/**
+	 * 查询流程
+	 * @param model
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "/query.action")
+	public String deploy(Model model, HttpServletRequest request, HttpServletResponse response) {
+
+		try {
+			List<Task> tasks = taskService.createTaskQuery()
+				    .taskAssignee("kermit")
+				    .processVariableValueEquals("orderId", "0815")
+				    .orderByTaskDueDate()
+				    .asc()
+				    .list();
+			for(Task tsk:tasks){
+				System.out.println(tsk.getName());
+			}
+		} catch (BeansException e) {
+			e.printStackTrace();
+		}
+		return "process/prj-process";
+	}
+
 	/**
 	 * 启动流程
 	 * @return
