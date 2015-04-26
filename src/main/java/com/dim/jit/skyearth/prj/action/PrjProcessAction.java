@@ -45,6 +45,14 @@ public class PrjProcessAction {
 	}
 
 	/**
+	 * to deploy
+	 * @return
+	 */
+	@RequestMapping(value="preDeploy")
+	public String prePeploy(){
+		return "process/prcs-deploy";
+	}
+	/**
 	 * 发布流程
 	 * @return
 	 */
@@ -86,7 +94,7 @@ public class PrjProcessAction {
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}
-		return "process/prj-process";
+		return "/process/prcs-query";
 	}
 
 	/**

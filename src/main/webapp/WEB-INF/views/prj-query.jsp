@@ -43,8 +43,8 @@
 				</div>
 				<table class="table table-striped table-bordered table-condensed">
 					<tr style=";font-weight:bold;background-color:#00ff00;">
-						<td style="width: 3%;font-weight:bold;background-color:#167ac6">序号</td>
-						<td style="width: 20%;font-weight:bold;background-color:#167ac6">项目名称</td>
+						<td style="width: 5%;font-weight:bold;background-color:#167ac6">序号</td>
+						<td style="width: 15%;font-weight:bold;background-color:#167ac6">项目名称</td>
 						<td style="width: 5%;font-weight:bold;background-color:#167ac6">创建人</td>
 						<td style="width: 10%;font-weight:bold;background-color:#167ac6">创建时间</td>
 						<td style="width: 20%;font-weight:bold;background-color:#167ac6">问题描述</td>
