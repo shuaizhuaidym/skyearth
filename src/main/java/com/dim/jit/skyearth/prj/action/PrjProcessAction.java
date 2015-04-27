@@ -78,7 +78,7 @@ public class PrjProcessAction {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping(value = "/query.action")
+	@RequestMapping(value = "/list.action")
 	public String deploy(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		try {
@@ -94,7 +94,7 @@ public class PrjProcessAction {
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}
-		return "/process/prcs-query";
+		return "/process/prcs-list";
 	}
 
 	/**

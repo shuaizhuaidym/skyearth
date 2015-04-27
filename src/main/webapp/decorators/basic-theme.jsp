@@ -87,7 +87,7 @@ body {
 						<li><a href="${ctx}/prj/new.action">项目新建</a></li>
 						<li><a href="${ctx}/prj/query.action">项目查询</a></li>
 						<li><a href="${ctx}/prj/statistic.action">项目统计</a></li>
-						<li><a href="${ctx}/process/query.action">流程管理</a></li>
+						<li><a href="${ctx}/process/list.action">流程管理</a></li>
 						<li><a href="${ctx}/org/frame.action">组织机构管理</a></li>
 						<li><a href="${ctx}/org/frame.action">消息（JMS）管理</a></li>
 					</ul>
