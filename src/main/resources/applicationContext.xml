@@ -16,6 +16,9 @@
 			</property> 
 		</bean>
 	 -->
+	 
+	<import resource="redis/redisConfig.xml" />
+	
 	<!-- Data source -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
