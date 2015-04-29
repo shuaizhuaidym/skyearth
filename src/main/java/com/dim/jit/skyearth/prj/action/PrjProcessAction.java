@@ -69,7 +69,7 @@ public class PrjProcessAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:/process/query.action";
+		return "redirect:/process/list.action";
 	}
 	/**
 	 * 查询流程
