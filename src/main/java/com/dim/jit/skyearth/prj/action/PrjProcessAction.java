@@ -15,6 +15,8 @@ import org.activiti.engine.ProcessEngines;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.repository.Deployment;
+import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.apache.log4j.Logger;
@@ -82,12 +84,18 @@ public class PrjProcessAction {
 	public String deploy(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		try {
-			List<Task> tasks = taskService.createTaskQuery()
-				    .taskAssignee("kermit")
-				    .processVariableValueEquals("orderId", "0815")
-				    .orderByTaskDueDate()
-				    .asc()
-				    .list();
+			List<org.activiti.engine.repository.Model>models = repositoryService.createModelQuery().list();
+			List<ProcessDefinition> processDefinitions = repositoryService.createProcessDefinitionQuery().list();
+			List<Deployment> deployments = repositoryService.createDeploymentQuery().list();
+			
+			model.addAttribute("processDefinations", processDefinitions);
+			model.addAttribute("models", models);
+			model.addAttribute("deplyments", deployments);
+			
+			for(ProcessDefinition pd:processDefinitions){
+				System.out.println("id:"+pd.getId()+"------name:"+pd.getName());
+			}
+			List<Task> tasks = taskService.createTaskQuery().list();
 			for(Task tsk:tasks){
 				System.out.println(tsk.getName());
 			}
