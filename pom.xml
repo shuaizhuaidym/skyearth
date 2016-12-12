@@ -166,11 +166,7 @@
 			<version>1.1.0.RELEASE</version>
 		</dependency>
 
-	<!--<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.1.0.Final</version>
-		</dependency> -->
+		<!--<dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-core</artifactId> <version>4.1.0.Final</version> </dependency> -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -218,13 +214,13 @@
 			<artifactId>mail</artifactId>
 			<version>1.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.6.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -235,7 +231,17 @@
 			<artifactId>jedis</artifactId>
 			<version>2.7.0</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>bouncycastle</groupId>
+			<artifactId>bouncycastle-jce-jdk15on</artifactId>
+			<version>152</version>
+		</dependency>
+		<dependency>
+			<groupId>bouncycastle</groupId>
+			<artifactId>bouncycastle-jce-ext-jdk15on</artifactId>
+			<version>152</version>
+		</dependency>
+
 	</dependencies>
 
 

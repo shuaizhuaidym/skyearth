@@ -93,6 +93,13 @@
 		<servlet-name>PrjProcessAction</servlet-name>
 		<servlet-class>com.dim.jit.skyearth.action.PrjProcessAction</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>Entry</display-name>
+		<servlet-name>Entry</servlet-name>
+		<servlet-class>com.dim.jit.skyearth.commom.Entry</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>PrjListAction</servlet-name>
 		<url-pattern>/PrjListAction</url-pattern>
@@ -108,5 +115,9 @@
 	<servlet-mapping>
 		<servlet-name>PrjProcessAction</servlet-name>
 		<url-pattern>/PrjProcessAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Entry</servlet-name>
+		<url-pattern>/entry</url-pattern>
 	</servlet-mapping>
 </web-app>
