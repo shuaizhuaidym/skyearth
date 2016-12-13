@@ -30,7 +30,7 @@
 							<td><input type="text" name="prjName" class="form-control"></td>
 						</tr>
 						<tr>
-							<td><label class="control-label col-xs-2">项目类型</label></td>
+							<td><label class="control-label col-xs-2">问题类型</label></td>
 							<td><input type="text" name="prjType" class="form-control"></td>
 							<td><label class="control-label col-xs-2">项目经理</label></td>
 							<td><input type="text" name="manager" class="form-control"></td>
@@ -74,7 +74,8 @@
 							<td><form:select path="status" items="${status}"
 									cssClass="form-control"></form:select>
 							<td><label class="control-label col-xs-2">项目阶段</label></td>
-							<td><input type="text" name="stage" class="form-control"></td>
+							<td><form:select path="stage" items="${stage}"
+									cssClass="form-control"></form:select></td>
 						</tr>
 						<tr>
 							<td><label class="control-label col-xs-2">产品名称</label></td>
@@ -99,9 +100,9 @@
 									cols="128" style="width: 81.5%"></textarea></td>
 						</tr>
 						<tr>
-							<td>处理人排查结果</td>
+							<td>处理人处理过程</td>
 							<td colspan="3"><textarea name="realCause" rows="4"
-									cols="128" style="width: 81.5%"></textarea></td>
+									cols="128" style="width: 81.5%"></textarea><a>插入当前日期</a></td>
 						</tr>
 					</table>
 					<button type="submit" class="btn btn-primary">保存</button>

@@ -30,7 +30,7 @@ public class Project {
 	private Integer prjId;
 	// 项目编号
 	private String prjSerial;
-	// 项目类型
+	// 项目类型(问题类型)
 	private String prjType;
 	// 项目名称
 	private String prjName;
@@ -50,6 +50,8 @@ public class Project {
 	private Engineer contact;
 	// 当前状态
 	private PrjStatus status;
+	// 项目阶段,未立项,售前,售中,售后
+	private Integer stage;
 	// 产品名称
 	private String productName;
 	// 产品版本
@@ -241,6 +243,14 @@ public class Project {
 
 	public void setIndustry(String industry) {
 		this.industry = industry;
+	}
+	@Column(name = "stage")
+	public Integer getStage() {
+		return stage;
+	}
+
+	public void setStage(Integer stage) {
+		this.stage = stage;
 	}
 
 }
