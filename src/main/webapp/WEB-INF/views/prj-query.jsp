@@ -45,12 +45,13 @@
 					<tr style=";font-weight:bold;background-color:#00ff00;">
 						<td style="width: 5%;font-weight:bold;background-color:#167ac6">序号</td>
 						<td style="width: 15%;font-weight:bold;background-color:#167ac6">项目名称</td>
-						<td style="width: 5%;font-weight:bold;background-color:#167ac6">创建人</td>
-						<td style="width: 10%;font-weight:bold;background-color:#167ac6">创建时间</td>
+						<td style="width: 15%;font-weight:bold;background-color:#167ac6">问题类型</td>
 						<td style="width: 20%;font-weight:bold;background-color:#167ac6">问题描述</td>
+						<td style="width: 10%;font-weight:bold;background-color:#167ac6">创建时间</td>
+						<td style="width: 10%;font-weight:bold;background-color:#167ac6">更新时间</td>
+						<td style="width: 5%;font-weight:bold;background-color:#167ac6">创建人</td>
 						<td style="width: 7%;font-weight:bold;background-color:#167ac6">联系人</td>
-						<td style="width: 10%;font-weight:bold;background-color:#167ac6">产品名称</td>
-						<td style="width: 8%;font-weight:bold;background-color:#167ac6">状态</td>
+						<td style="width: 8%;font-weight:bold;background-color:#167ac6">当前状态</td>
 					</tr>
 					<c:forEach var="prj" varStatus="status" items="${projects}">
 						<tr>
@@ -58,11 +59,12 @@
 							<td>
 								<a href="${ctx}/prj/edit/${prj.prjId}.action">${prj.prjName}</a>
 							</td>
+							<td>${prj.productName}</td>
+							<td>${prj.clientDesc}</td>
 							<td>${prj.creator.engineerName}</td>
 							<td><fmt:formatDate value="${prj.createDate}" pattern="yyyy-MM-dd"/></td>
-							<td>${prj.clientDesc}</td>
 							<td>${prj.contact.engineerName}</td>
-							<td>${prj.productName}</td>
+							<td>${prj.contact.engineerName}</td>
 							<td>${prj.status.name}</td>
 						</tr>
 					</c:forEach>
