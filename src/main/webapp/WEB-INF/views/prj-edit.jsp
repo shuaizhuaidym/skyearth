@@ -79,7 +79,7 @@
 						</tr>
 						<tr>
 							<td>处理人排查结果</td>
-							<td colspan="3"><textarea name="realCause" rows="4" cols="128" style="width: 81.5%"></textarea><a>插入当前日期</a></td>
+							<td colspan="3"><textarea name="realCause" rows="4" cols="128" style="width: 81.5%"></textarea><a style="cursor: pointer">插入当前日期</a></td>
 						</tr>
 					</table>
 					<button type="submit" class="btn btn-primary">保存</button>

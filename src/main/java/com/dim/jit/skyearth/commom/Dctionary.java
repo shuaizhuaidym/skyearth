@@ -12,6 +12,8 @@ public class Dctionary {
 	
 	private String dictName;
 	
+	private String dicCode;
+	
 	private Integer order;
 
 	public Integer getDictId() {
@@ -44,6 +46,14 @@ public class Dctionary {
 
 	public void setOrder(Integer order) {
 		this.order = order;
+	}
+
+	public String getDicCode() {
+		return dicCode;
+	}
+
+	public void setDicCode(String dicCode) {
+		this.dicCode = dicCode;
 	}
 
 }
