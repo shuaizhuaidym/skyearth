@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_dictionary", catalog = "skyearth")
-public class Dctionary {
+public class Dictionary {
 	public static final int[]types=new int[11];
 	@Id
 	@Column(name="dic_id")
