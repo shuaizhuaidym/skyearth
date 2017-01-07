@@ -1,4 +1,4 @@
-package com.dim.jit.skyearth.commom;
+package com.dim.jit.skyearth.common;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

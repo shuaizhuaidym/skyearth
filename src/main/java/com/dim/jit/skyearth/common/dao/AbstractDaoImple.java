@@ -1,4 +1,4 @@
-package com.dim.jit.skyearth.prj.dao;
+package com.dim.jit.skyearth.common.dao;
 
 import java.util.List;
 

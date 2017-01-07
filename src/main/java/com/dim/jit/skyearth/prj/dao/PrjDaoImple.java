@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.dim.jit.skyearth.common.dao.AbstractDaoImple;
 import com.dim.jit.skyearth.prj.entity.Project;
 
 @Repository
