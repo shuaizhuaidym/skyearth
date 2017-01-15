@@ -8,7 +8,7 @@
 <link href="${ctx}/resource/bootstrap/img/favicon.png" rel="icon" type="image/x-icon" />
 <link href="${ctx}/resource/bootstrap/img/favicon.png" rel="shortcut icon" type="image/x-icon">
 
-<title>JIT项目支持管理系统</title>
+<title>JIT研发管理平台 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
@@ -78,7 +78,7 @@ body {
 				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="${ctx}/">JIT项目支持跟踪系统</a>
+				<a class="brand" href="${ctx}/">JIT研发管理平台</a>
 				<div class="nav-collapse collapse">
 					<p class="navbar-text pull-right">
 						Logged in as <a href="#" class="navbar-link">Username</a>
@@ -89,6 +89,7 @@ body {
 						<li><a href="${ctx}/prj/statistic.action">项目统计</a></li>
 						<li><a href="${ctx}/process/list.action">流程管理</a></li>
 						<li><a href="${ctx}/org/frame.action">组织机构管理</a></li>
+						<li><a href="${ctx}/dic/list.action">字典管理</a></li>
 						<li><a href="${ctx}/org/frame.action">消息（JMS）管理</a></li>
 					</ul>
 				</div>
